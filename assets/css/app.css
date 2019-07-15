@@ -1,0 +1,43 @@
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+.container {
+    width: 590px;
+}
+
+a {
+    color: #808080;
+}
+
+.badge-notification {
+    position: relative;
+    margin-right: 10px;
+}
+
+.badge-notification[data-badge]::after {
+    content: attr(data-badge);
+    position: absolute;
+    top: -11px;
+    right: -10px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 22px;
+    height: 22px;
+    line-height: 22px;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 50%;
+    background: var(--secondary);
+    color: #fff;
+}
+
+span.badge-notification {
+    margin-right: 24px;
+}
+
+span.badge-notification[data-badge]::after {
+    top: -11px;
+    right: -24px;
+}

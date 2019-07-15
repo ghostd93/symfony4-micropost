@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file source-language="pl" target-language="pl" datatype="plaintext" original="file.ext">
+    <header>
+      <tool tool-id="symfony" tool-name="Symfony"/>
+    </header>
+    <body>
+      <trans-unit id="rNpsyuv" resname="Add new">
+        <source>Add new</source>
+        <target>Dodaj nowy</target>
+      </trans-unit>
+      <trans-unit id="SPDT05f" resname="Sign out">
+        <source>Sign out</source>
+        <target>Wyloguj się</target>
+      </trans-unit>
+      <trans-unit id="v9QCsvb" resname="Sign in">
+        <source>Sign in</source>
+        <target>Zaloguj się</target>
+      </trans-unit>
+      <trans-unit id="XiuOllA" resname="Sign up">
+        <source>Sign up</source>
+        <target>Zarejestruj się</target>
+      </trans-unit>
+      <trans-unit id="N5KDgMc" resname="You currently do not follow anyone, you might find these users interesting">
+        <source>You currently do not follow anyone, you might find these users interesting</source>
+        <target>Jeszcze nikogo nie obserwujesz, ci użytkownicy mogą Ci się spodobać</target>
+      </trans-unit>
+      <trans-unit id=".Je91OR" resname="Recent updates">
+        <source>Recent updates</source>
+        <target>Ostatnie aktualizacje</target>
+      </trans-unit>
+      <trans-unit id="RkxP.QG" resname="Edit">
+        <source>Edit</source>
+        <target>Edytuj</target>
+      </trans-unit>
+      <trans-unit id="4tClSWj" resname="Delete">
+        <source>Delete</source>
+        <target>Usuń</target>
+      </trans-unit>
+      <trans-unit id="ZPkVy4v" resname="Like">
+        <source>Like</source>
+        <target>Lubię to</target>
+      </trans-unit>
+      <trans-unit id="6qiBw1n" resname="Unlike">
+        <source>Unlike</source>
+        <target>Nie lubię</target>
+      </trans-unit>
+      <trans-unit id="ZB0e9le" resname="Follow">
+        <source>Follow</source>
+        <target>Obserwuj</target>
+      </trans-unit>
+      <trans-unit id="d41Wjog" resname="Unfollow">
+        <source>Unfollow</source>
+        <target>Przestań obserwować</target>
+      </trans-unit>
+      <trans-unit id="oUWrNCp" resname="Followers">
+        <source>Followers</source>
+        <target>Obserwujący</target>
+      </trans-unit>
+      <trans-unit id="NEtCcco" resname="Following">
+        <source>Following</source>
+        <target>Obserwowani</target>
+      </trans-unit>
+      <trans-unit id="dDUw20Q" resname="Please sign in">
+        <source>Please sign in</source>
+        <target>Proszę się zalogować</target>
+      </trans-unit>
+      <trans-unit id="588_9PF" resname="Password">
+        <source>Password</source>
+        <target>Hasło</target>
+      </trans-unit>
+      <trans-unit id="email.registration">
+        <source>email.registration</source>
+        <target><![CDATA[<h3>Witaj w naszej aplikacji!</h3>
+<p>Cześć
+    %name%! Zostałeś zarejestrowany w naszej aplikacji!</p>
+<p>Proszę potwierdź swoje konto klikając w ten
+    <a href="%confirm-link%">link</a>.</p>
+<p>Dzięki!</p>]]></target>
+      </trans-unit>
+      <trans-unit id="47ienTP" resname="Username">
+        <source>Username</source>
+        <target>Nazwa użytkownika</target>
+      </trans-unit>
+      <trans-unit id="jgDN9x_" resname="Full Name">
+        <source>Full Name</source>
+        <target>Imię i nazwisko</target>
+      </trans-unit>
+      <trans-unit id="wpIhDEQ" resname="Confirm Password">
+        <source>Confirm Password</source>
+        <target>Potwierdź hasło</target>
+      </trans-unit>
+      <trans-unit id="E7aiky2" resname="I agree to the terms of service">
+        <source>I agree to the terms of service</source>
+        <target>Zgadzam się z warunkami korzystania z usług</target>
+      </trans-unit>
+      <trans-unit id="registration.register" resname="Register">
+        <source>Register</source>
+        <target>Zarejestruj się</target>
+      </trans-unit>
+      <trans-unit id="user.email" resname="E-mail">
+        <source>E-mail</source>
+        <target>E-mail</target>
+      </trans-unit>
+      <trans-unit id="post.save" resname="Save">
+        <source>Save</source>
+        <target>Zapisz</target>
+      </trans-unit>
+      <trans-unit id="login.title" resname="Log in!">
+        <source>Log in!</source>
+        <target>Zaloguj się!</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

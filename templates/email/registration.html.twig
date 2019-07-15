@@ -1,0 +1,8 @@
+{{ 'email.registration'|trans({
+    '%name%': user.fullName, 
+    '%confirm-link%': url('app_confirm', {'token': user.confirmationToken})
+})|raw }}
+
+
+
+

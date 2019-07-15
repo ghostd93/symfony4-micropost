@@ -1,0 +1,85 @@
+<div class="media text-muted pt-3">
+    <img alt="" class="mr-2 rounded" data-src="holder.js/32x32?text=MJ&bg=e83e8c&fg=fff&size=8">
+    <p class="media-body mb-0 small lh-125">
+        <span class="d-block">
+            <a href="{{ path('micro_post_user', {'username': post.user.username}) }}">
+                <strong class="text-gray-dark">{{ post.user.fullName }}</strong>
+                @{{ post.user.username }}
+            </a>
+
+            <small>·
+                {{ post.time | date("d/m/y") }}</small>
+        </span>
+        <a href="{{ path('micro_post_show', { 'id': post.id }) }}"><br>
+        {{ post.text }}
+        </a>
+        <small class="d-block text-right mt-3">
+            {% if is_granted('edit', post) %}
+                <a href="{{ path('micro_post_edit', { 'id': post.id }) }}">{{ 'Edit'|trans }}</a>
+            {% endif %}
+            {% if is_granted('delete', post) %}
+                <a href="{{ path('micro_post_delete', { 'id': post.id }) }}">{{ 'Delete'|trans }}</a>
+            {% endif %}
+        </small>
+    </p>
+</div>
+{% set isLiked = post.getLikedBy.contains(app.user) %}
+{% if app.user == NULL or post.user.id != app.user.id %}
+<div class="py-2 border-bottom border-gray">
+    <button style="display: {% if not isLiked %}block{% else %}none{% endif %};" 
+        class="btn btn-outline-secondary btn-sm" id="like-{{ post.id }}">{{ 'Like'|trans }}
+        <span class="badge badge-light" id="likes-like-{{ post.id }}">{{ post.getLikedBy.count }}</span>
+    </button>
+    <button style="display: {% if isLiked %}block{% else %}none{% endif %};" 
+        class="btn btn-outline-danger btn-sm" id="unlike-{{ post.id }}">{{ 'Unlike'|trans }}
+        <span class="badge badge-light" id="likes-unlike-{{ post.id }}">{{ post.getLikedBy.count }}</span>
+    </button>
+    <script>
+
+        var likeButton = document.getElementById('like-{{ post.id }}');
+        var unlikeButton = document.getElementById('unlike-{{ post.id }}');
+
+        addOnClick(
+            likeButton,
+            unlikeButton,
+            document.getElementById('likes-unlike-{{ post.id }}'),
+            "{{ path('likes_like', {'id': post.id}) }}"
+        );
+
+        addOnClick(
+            unlikeButton,
+            likeButton,
+            document.getElementById('likes-like-{{ post.id }}'),
+            "{{ path('likes_unlike', {'id': post.id}) }}"
+        );
+
+        function switchButtons(button, oppositeButton){
+            button.disabled = false;
+            button.style.display = 'none';
+            oppositeButton.style.display = 'block';
+        }
+
+        function addOnClick(button, oppositeButton, likeCount, path){
+            button.addEventListener('click', function(event){
+                {% if not app.user %}
+                    return window.location.replace('{{ path('app_login') }}')
+                {% endif %}
+
+                button.disabled = true;
+                fetch(path, {'credentials': 'include'})
+                    .then(function(res){
+                        res.json().then(function(json){
+                            likeCount.innerText = json.count;
+                            switchButtons(button, oppositeButton);
+                        })
+                    })
+                    .catch(function(){
+                        switchButtons(button, oppositeButton);
+                    })
+
+                event.preventDefault();
+            })
+        }
+    </script>
+</div>
+{% endif %}
